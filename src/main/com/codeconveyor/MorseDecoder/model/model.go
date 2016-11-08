@@ -2,7 +2,7 @@ package model
 
 import (
 	"strings"
-	"fmt"
+	//"fmt"
 	"os"
 )
 
@@ -46,16 +46,16 @@ var MORSE_TABLE = map[string]string{
 	"----."	: "9",
 }
 
-func SeparateLeters(morseCode string){
+func SeparateLeters(morseCode string) string{
 	morseCode = strings.Replace(morseCode,"\n"," \n",-1)
 	var str []string = strings.Split(morseCode," ")
 	var result string
 	for _, i:= range str{
-		fmt.Print(MORSE_TABLE[i])
+		//fmt.Print(MORSE_TABLE[i])
 		result += MORSE_TABLE[i]
 	}
 	WriteStringToFile(result)
-
+	return result
 }
 
 func GetStringFromFile(fileName string) string{
