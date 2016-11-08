@@ -1,7 +1,8 @@
 package view
 
-import "fmt"
+
 import (
+	"fmt"
 	"strings"
 	"bufio"
 	"os"
