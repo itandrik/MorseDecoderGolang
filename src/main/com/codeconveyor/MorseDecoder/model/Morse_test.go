@@ -13,8 +13,9 @@ func TestDecode(t *testing.T){
 		SeparateLeters(
 			GetStringFromFile(
 				"src/main/com/codeconveyor/MorseDecoder/resources/morse.txt"));
+	result := DecodeArrayOfStrings(strDecoded,nil)
 
-	if(strings.EqualFold(strDecoded, strFromFile)){
+	if(strings.EqualFold(result, strFromFile)){
 		t.Error("Error comparing")
 	}
 }

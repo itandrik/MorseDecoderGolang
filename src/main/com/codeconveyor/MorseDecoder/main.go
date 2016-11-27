@@ -3,14 +3,13 @@ package main
 
 import (
 	"main/com/codeconveyor/MorseDecoder/controller"
-	"time"
-	"math/big"
 	"fmt"
-	"log"
 	"github.com/wblakecaldwell/profiler"
-
 	"github.com/pkg/profile"
 	"net/http"
+	"math/big"
+	"time"
+	"log"
 )
 
 func main() {
@@ -26,6 +25,6 @@ func main() {
 	controller.Decode()
 
 	elapsed := time.Since(start)
-	log.Printf("Binomial took %s", elapsed)
+	log.Printf("Time of all program : %s", elapsed)
 	fmt.Scanln()
 }

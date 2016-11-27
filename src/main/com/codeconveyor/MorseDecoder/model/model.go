@@ -46,15 +46,23 @@ var MORSE_TABLE = map[string]string{
 	"----."	: "9",
 }
 
-func SeparateLeters(morseCode string) string{
+func SeparateLeters(morseCode string) []string{
 	morseCode = strings.Replace(morseCode,"\n"," \n",-1)
 	var str []string = strings.Split(morseCode," ")
+
+	//WriteStringToFile(result)
+	return str
+}
+
+func DecodeArrayOfStrings(str []string, c chan string) string{
 	var result string
 	for _, i:= range str{
 		//fmt.Print(MORSE_TABLE[i])
 		result += MORSE_TABLE[i]
 	}
-	WriteStringToFile(result)
+	if(c != nil) {
+		c <- result
+	}
 	return result
 }
 
